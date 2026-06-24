@@ -148,7 +148,7 @@ height=450
 # Gift Section
 if st.session_state.show_gift:
 
-    st.markdown("""
+    st.markdown("
     <div style="
         background:white;
         padding:25px;
@@ -156,17 +156,16 @@ if st.session_state.show_gift:
         text-align:center;
         box-shadow:0 0 20px rgba(255,105,180,.4);
         margin-top:20px;
-        animation:pulse 1s infinite alternate;
-    ">
+        animation:pulse 1s infinite alternate;">
 
         <h2 style="color:#ff1493;">
             💕 I Knew It! 💕
         </h2>
 
         <div style="font-size:90px;">
-        <h4>
+        
             🎁 🎁 🎁
-        </h4>   
+        
         </div>
 
         <h3>
