@@ -1,0 +1,176 @@
+```python
+import streamlit as st
+import streamlit.components.v1 as components
+
+st.set_page_config(
+    page_title="Virtual Love Game 💖",
+    page_icon="💖",
+    layout="centered"
+)
+
+# Session State
+if "show_gift" not in st.session_state:
+    st.session_state.show_gift = False
+
+# Mobile App Styling
+st.markdown("""
+<style>
+.block-container{
+    max-width:400px;
+    margin:auto;
+    padding-top:20px;
+}
+
+.stButton > button{
+    width:100%;
+    height:60px;
+    font-size:24px;
+    font-weight:bold;
+    border-radius:20px;
+    border:none;
+    background:linear-gradient(45deg,#ff1493,#ff69b4);
+    color:white;
+}
+
+.main-box{
+    background:linear-gradient(180deg,#ffe6f2,#fff);
+    border-radius:30px;
+    padding:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.15);
+    text-align:center;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# App Container
+st.markdown('<div class="main-box">', unsafe_allow_html=True)
+
+# Title
+st.markdown("""
+<h1 style='text-align:center;color:#ff1493;'>
+💖 Do You Love Me?? 💖
+</h1>
+""", unsafe_allow_html=True)
+
+# YES Button
+if st.button("YES !! ❤️"):
+    st.session_state.show_gift = True
+    st.balloons()
+
+# NO Button Game (Android + PC)
+components.html(
+"""
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+    margin:0;
+    overflow:hidden;
+    background:transparent;
+    font-family:Arial,sans-serif;
+}
+
+#noBtn{
+    position:absolute;
+    top:120px;
+    left:50%;
+    transform:translateX(-50%);
+    width:140px;
+    height:55px;
+    background:#ff4da6;
+    color:white;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.25);
+}
+
+</style>
+</head>
+
+<body>
+
+<button id="noBtn">NO 😜</button>
+
+<script>
+
+const btn = document.getElementById("noBtn");
+
+const texts = [
+    "NO 😜",
+    "Try Again 😂",
+    "Wrong Button 🤣",
+    "Catch Me 😎",
+    "Impossible 😝",
+    "Not Today 😆",
+    "Too Slow 😜",
+    "Love Me 😍"
+];
+
+function moveButton(){
+
+    const maxX = window.innerWidth - 150;
+    const maxY = window.innerHeight - 80;
+
+    btn.style.left = Math.random() * maxX + "px";
+    btn.style.top = Math.random() * maxY + "px";
+
+    btn.innerHTML =
+        texts[Math.floor(Math.random() * texts.length)];
+}
+
+btn.addEventListener("mouseover", moveButton);
+btn.addEventListener("touchstart", moveButton);
+btn.addEventListener("click", moveButton);
+
+</script>
+
+</body>
+</html>
+""",
+height=300
+)
+
+# Gift Section
+if st.session_state.show_gift:
+
+    st.markdown("""
+    <div style="
+        background:white;
+        padding:25px;
+        border-radius:25px;
+        text-align:center;
+        box-shadow:0 0 20px rgba(255,105,180,.4);
+        margin-top:20px;
+        animation: pulse 1s infinite alternate;
+    ">
+        <h2 style="color:#ff1493;">💕 I Knew It! 💕</h2>
+
+        <div style="font-size:90px;">
+            🎁 🎁 🎁
+        </div>
+
+        <h3>🌸 Here Is Your Gift 🌸</h3>
+
+        <div style="font-size:75px;">
+            💐 🧸 🍫
+        </div>
+
+        <p style="
+            font-size:24px;
+            color:#ff1493;
+            font-weight:bold;
+        ">
+            You Are Special ❤️
+        </p>
+
+        <h2>🥰 Love You Forever 🥰</h2>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
+```
