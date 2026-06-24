@@ -1,4 +1,4 @@
-```python
+
 import streamlit as st
 import streamlit.components.v1 as components
 
@@ -189,4 +189,4 @@ if st.session_state.show_gift:
 
     </div>
     """, unsafe_allow_html=True)
-```
+
