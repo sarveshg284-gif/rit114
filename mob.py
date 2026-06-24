@@ -146,4 +146,36 @@ height=450
 # Gift Section
 if st.session_state.show_gift:
 
+    st.markdown(
+        """
+        <div style="
+            background:white;
+            padding:25px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 0 20px rgba(255,105,180,.4);
+            margin-top:20px;
+        ">
+
+        <h2>💕 I knew it! 💕</h2>
+
+        <div style="font-size:90px;">
+            🎁 🎁 🎁
+        </div>
+
+        <h3>🌸 Here is your gift 🌸</h3>
+
+        <div style="font-size:70px;">
+            💐 🧸 🍫
+        </div>
+
+        <p style="font-size:22px;color:#ff1493;">
+            You are special ❤️
+        </p>
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
     
