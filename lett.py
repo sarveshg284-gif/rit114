@@ -1,4 +1,4 @@
-```python
+
 import streamlit as st
 import streamlit.components.v1 as components
 
@@ -191,4 +191,4 @@ opacity:0;
 """
 
 components.html(html, height=380)
-```
+
