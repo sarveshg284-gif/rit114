@@ -1,7 +1,8 @@
-
+```python
 import streamlit as st
 import streamlit.components.v1 as components
 
+# Page Config
 st.set_page_config(
     page_title="Virtual Love Game 💖",
     page_icon="💖",
@@ -12,9 +13,10 @@ st.set_page_config(
 if "show_gift" not in st.session_state:
     st.session_state.show_gift = False
 
-# Mobile App Styling
+# Custom CSS
 st.markdown("""
 <style>
+
 .block-container{
     max-width:400px;
     margin:auto;
@@ -32,37 +34,45 @@ st.markdown("""
     color:white;
 }
 
-.main-box{
-    background:linear-gradient(180deg,#ffe6f2,#fff);
-    border-radius:30px;
-    padding:20px;
-    box-shadow:0 0 20px rgba(0,0,0,0.15);
-    text-align:center;
+@keyframes pulse {
+    from {transform: scale(1);}
+    to {transform: scale(1.05);}
 }
+
 </style>
 """, unsafe_allow_html=True)
 
-# App Container
-st.markdown('<div class="main-box">', unsafe_allow_html=True)
-
 # Title
 st.markdown("""
-<h1 style='text-align:center;color:#ff1493;'>
+<div style="
+    background:linear-gradient(180deg,#ffe6f2,#ffffff);
+    border-radius:30px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,0.15);
+">
+
+<h1 style="color:#ff1493;">
 💖 Do You Love Me?? 💖
 </h1>
+
+</div>
 """, unsafe_allow_html=True)
+
+st.write("")
 
 # YES Button
 if st.button("YES !! ❤️"):
     st.session_state.show_gift = True
     st.balloons()
 
-# NO Button Game (Android + PC)
+# NO Button Game
 components.html(
 """
 <!DOCTYPE html>
 <html>
 <head>
+
 <style>
 
 body{
@@ -90,6 +100,7 @@ body{
 }
 
 </style>
+
 </head>
 
 <body>
@@ -111,10 +122,10 @@ const texts = [
     "Love Me 😍"
 ];
 
-function moveButton(){
+function moveButton() {
 
     const maxX = window.innerWidth - 150;
-    const maxY = window.innerHeight - 80;
+    const maxY = window.innerHeight - 100;
 
     btn.style.left = Math.random() * maxX + "px";
     btn.style.top = Math.random() * maxY + "px";
@@ -125,14 +136,13 @@ function moveButton(){
 
 btn.addEventListener("mouseover", moveButton);
 btn.addEventListener("touchstart", moveButton);
-btn.addEventListener("click", moveButton);
 
 </script>
 
 </body>
 </html>
 """,
-height=300
+height=450
 )
 
 # Gift Section
@@ -146,15 +156,20 @@ if st.session_state.show_gift:
         text-align:center;
         box-shadow:0 0 20px rgba(255,105,180,.4);
         margin-top:20px;
-        animation: pulse 1s infinite alternate;
+        animation:pulse 1s infinite alternate;
     ">
-        <h2 style="color:#ff1493;">💕 I Knew It! 💕</h2>
+
+        <h2 style="color:#ff1493;">
+            💕 I Knew It! 💕
+        </h2>
 
         <div style="font-size:90px;">
             🎁 🎁 🎁
         </div>
 
-        <h3>🌸 Here Is Your Gift 🌸</h3>
+        <h3>
+            🌸 Here Is Your Gift 🌸
+        </h3>
 
         <div style="font-size:75px;">
             💐 🧸 🍫
@@ -168,8 +183,10 @@ if st.session_state.show_gift:
             You Are Special ❤️
         </p>
 
-        <h2>🥰 Love You Forever 🥰</h2>
+        <h2>
+            🥰 Love You Forever 🥰
+        </h2>
+
     </div>
     """, unsafe_allow_html=True)
-
-st.markdown("</div>", unsafe_allow_html=True)
+```
