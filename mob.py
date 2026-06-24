@@ -148,7 +148,7 @@ height=450
 # Gift Section
 if st.session_state.show_gift:
 
-    st.markdown("
+    st.markdown("""
     <div style="
         background:white;
         padding:25px;
