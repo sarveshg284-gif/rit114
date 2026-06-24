@@ -164,7 +164,9 @@ if st.session_state.show_gift:
         </h2>
 
         <div style="font-size:90px;">
+        <h4>
             🎁 🎁 🎁
+        </h4>   
         </div>
 
         <h3>
