@@ -49,9 +49,7 @@ st.markdown("""
     border-radius:30px;
     padding:20px;
     text-align:center;
-    box-shadow:0 0 20px rgba(0,0,0,0.15);
-">
-
+    box-shadow:0 0 20px rgba(0,0,0,0.15);">
 <h1 style="color:#ff1493;">
 💖 Do You Love Me?? 💖
 </h1>
