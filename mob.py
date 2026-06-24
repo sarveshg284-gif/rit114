@@ -173,4 +173,3 @@ if st.session_state.show_gift:
     """, unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
-```
