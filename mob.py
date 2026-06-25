@@ -51,7 +51,7 @@ st.markdown("""
     text-align:center;
     box-shadow:0 0 20px rgba(0,0,0,0.15);">
 <h1 style="color:#ff1493;">
-💖 Do You Love Me?? 💖
+💖 __________💖
 </h1>
 
 </div>
@@ -60,9 +60,6 @@ st.markdown("""
 st.write("")
 
 # YES Button
-if st.button("YES !! ❤️"):
-    st.session_state.show_gift = True
-    st.balloons()
 
 # NO Button Game
 components.html(
@@ -103,7 +100,7 @@ body{
 
 <body>
 
-<button id="noBtn">NO 😜</button>
+<button id="noBtn"> 😜</button>
 
 <script>
 
